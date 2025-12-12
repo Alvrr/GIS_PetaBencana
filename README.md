@@ -9,14 +9,18 @@ Website interaktif yang menampilkan peta bencana alam terbaru di Indonesia denga
 ## 🌟 Fitur Utama
 
 - **Peta Interaktif**: Menggunakan Leaflet.js untuk menampilkan lokasi bencana secara real-time
-- **Data Terbaru**: Informasi bencana alam yang terjadi di Indonesia (2022-2024)
+- **API BMKG Real-time**: Integrasi langsung dengan API resmi BMKG untuk data gempa terkini dan peringatan cuaca
+- **Gempa Terkini**: Menampilkan info gempa terbaru dari BMKG (magnitude, lokasi, waktu, potensi)
+- **Peringatan Dini**: Alert cuaca ekstrem dan gempa yang dirasakan dari BMKG
+- **Data Terbaru**: Informasi bencana alam yang terjadi di Indonesia (November - Desember 2025)
 - **Filter Bencana**: Filter berdasarkan jenis bencana (Gempa, Banjir, Longsor, Gunung Berapi)
 - **Statistik Real-time**: Menampilkan total kejadian dan korban terdampak
 - **Informasi Detail**: Setiap marker berisi informasi lengkap (tanggal, korban, deskripsi, status)
 - **Tombol Donasi**: Link langsung ke BNPB, PMI, dan Kitabisa
 - **Kontak Darurat**: Nomor telepon penting untuk tanggap darurat
 - **Responsive Design**: Tampil sempurna di desktop, tablet, dan mobile
-- **UI Modern**: Gradient colors, animasi, dan design yang menarik
+- **UI Modern**: Nuansa warna cream, animasi, dan design yang menarik
+- **Auto Refresh**: Data BMKG di-refresh otomatis setiap 5 menit
 
 ## 🚀 Demo
 
@@ -46,19 +50,28 @@ cd GIS_PetaBencana
 
 ## 📊 Data Bencana
 
-Website ini mencakup 12+ kejadian bencana alam terbaru di Indonesia:
+### Data Manual (November - Desember 2025)
+Website ini mencakup 14 kejadian bencana alam terbaru di Indonesia:
 
-- **Gempa Bumi**: Cianjur, Lombok, Maluku
-- **Banjir**: Sumatera Barat, Jakarta, Aceh, Kalimantan Selatan
-- **Gunung Berapi**: Marapi, Semeru
-- **Tanah Longsor**: Purworejo, Puncak
+- **Gempa Bumi**: Maluku Utara, Kupang NTT, Padang Pariaman
+- **Banjir**: Aceh Selatan, Jakarta & Bekasi, Garut, Kalimantan Tengah, Makassar, Medan
+- **Gunung Berapi**: Lewotobi (Status Awas), Merapi (Status Siaga)
+- **Tanah Longsor**: Puncak Pass Cianjur, Tasikmalaya, Wonosobo
+
+### Data Real-time dari API BMKG
+- **Gempa Terkini**: Update otomatis dari BMKG (autogempa.json)
+- **Gempa Dirasakan**: Info gempa yang dirasakan masyarakat
+- **Peringatan Cuaca**: Alert untuk cuaca ekstrem dan potensi bencana
 
 ## 🛠️ Teknologi yang Digunakan
 
 - **HTML5** - Struktur website
-- **CSS3** - Styling dengan gradient dan animasi
-- **JavaScript (ES6)** - Logika aplikasi
+- **CSS3** - Styling dengan gradient cream dan animasi
+- **JavaScript (ES6)** - Logika aplikasi dan Fetch API
 - **Leaflet.js 1.9.4** - Library peta interaktif
+- **BMKG API** - Data gempa real-time dan peringatan cuaca
+  - `https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json` - Gempa terkini
+  - `https://data.bmkg.go.id/DataMKG/TEWS/gempadirasakan.json` - Gempa dirasakan
 - **Font Awesome 6.4.0** - Icons
 - **Google Fonts (Poppins)** - Typography
 

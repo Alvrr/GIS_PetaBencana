@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Bencana Alam Indonesia - Peduli & Berbagi</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h1>Peduli Bencana Indonesia</h1>
+            </div>
+            <div class="header-info">
+                <span class="update-info"><i class="far fa-clock"></i> Update: Desember 2024</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2><i class="fas fa-exclamation-triangle"></i> Statistik Bencana</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-fire"></i>
+                        <div class="stat-info">
+                            <h3 id="totalBencana">0</h3>
+                            <p>Total Kejadian</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <h3 id="totalKorban">0</h3>
+                            <p>Korban Terdampak</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2><i class="fas fa-filter"></i> Filter Bencana</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-type="all">
+                        <i class="fas fa-globe"></i> Semua
+                    </button>
+                    <button class="filter-btn" data-type="gempa">
+                        <i class="fas fa-house-damage"></i> Gempa
+                    </button>
+                    <button class="filter-btn" data-type="banjir">
+                        <i class="fas fa-water"></i> Banjir
+                    </button>
+                    <button class="filter-btn" data-type="longsor">
+                        <i class="fas fa-mountain"></i> Longsor
+                    </button>
+                    <button class="filter-btn" data-type="gunung">
+                        <i class="fas fa-volcano"></i> G. Berapi
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar-section donation-section">
+                <h2><i class="fas fa-heart"></i> Mari Berdonasi</h2>
+                <p class="donation-text">
+                    Saudara kita membutuhkan bantuan. Setiap kontribusi Anda sangat berarti untuk pemulihan korban bencana.
+                </p>
+                <div class="donation-links">
+                    <a href="https://www.bnpb.go.id/" target="_blank" class="donation-btn">
+                        <i class="fas fa-hand-holding-usd"></i> BNPB
+                    </a>
+                    <a href="https://pmikabupaten.pmi.or.id/" target="_blank" class="donation-btn">
+                        <i class="fas fa-plus-circle"></i> PMI
+                    </a>
+                    <a href="https://kitabisa.com/campaign/bencanaalam" target="_blank" class="donation-btn">
+                        <i class="fas fa-donate"></i> Kitabisa
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-section emergency-section">
+                <h2><i class="fas fa-phone-alt"></i> Kontak Darurat</h2>
+                <div class="emergency-contacts">
+                    <div class="contact-item">
+                        <strong>BNPB:</strong> 117 / 021-29827444
+                    </div>
+                    <div class="contact-item">
+                        <strong>PMI:</strong> 021-7992325
+                    </div>
+                    <div class="contact-item">
+                        <strong>Basarnas:</strong> 115
+                    </div>
+                    <div class="contact-item">
+                        <strong>Posko Bencana:</strong> 129
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Map Container -->
+        <main class="map-container">
+            <div id="map"></div>
+            <div class="map-legend">
+                <h3>Legenda:</h3>
+                <div class="legend-item">
+                    <span class="legend-icon gempa"><i class="fas fa-house-damage"></i></span>
+                    <span>Gempa Bumi</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon banjir"><i class="fas fa-water"></i></span>
+                    <span>Banjir</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon longsor"><i class="fas fa-mountain"></i></span>
+                    <span>Tanah Longsor</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon gunung"><i class="fas fa-volcano"></i></span>
+                    <span>Gunung Berapi</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p><i class="fas fa-heart"></i> Dibuat dengan kepedulian untuk Indonesia</p>
+            <p>Data bersumber dari BNPB, BMKG, dan berbagai sumber terpercaya | © 2024</p>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
